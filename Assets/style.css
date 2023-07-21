@@ -20,8 +20,6 @@ header{
 
 }
 header div{
-    display: flex;
-    flex-direction: row;
     background-color: var(--box);
 }
 
@@ -29,6 +27,19 @@ header h1{
     background-color: var(--box);
 }
 main{
-    display: inline;
+    display: flex;
     text-align: center;
+}
+.intro p{
+    font-size: 40px;
+}
+div{
+    background-color: var(--grey);
+    color: var(--white);
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
