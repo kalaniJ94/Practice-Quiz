@@ -10,11 +10,38 @@
 // WHEN the game is over
 // THEN I can save my initials and my score
 // --------------------------------------------------------------------------------------------------------
-var startButton = document.querySelector(".start-button");
-var timerText = document.querySelector("timer-text");
+var wordBlank = document.querySelector(".word-blanks");
+var win = document.querySelector(".win");
+var lose = document.querySelector(".lose");
+
+var timerEl = document.getElementById("timer-text");
+var startButton = document.getElementById("start-button");
+
+var questionBlank = "";
+var wordBlank = "";
+var highscore = 0;
+var isWin;
+var timer;
+
+
+
 
 //So first thing's first. There will be a start button which starts a one minute timer at the top of the page. The Start button will also reveal the first question. 
 
+function startGame(){
+    timerCount=60;
+    startTimer()
+    
+}
+function startTimer() {
+    // Starts timer
+    timer = setInterval(function() {
+        timerCount--;
+        timerEl.textContent = timerCount;
+    }
+    , 1000);
+}
+startButton.addEventListener("click", startGame);
 //Questions are multiple choice(Four choices). "Wrong!" or "Correct!" will appear when a choice is made.  Next question will appear after those two seconds. 
 
 //If an incorrect question is answered, ten seconds will be subtracted from the timer. Correct answers will award points. 
