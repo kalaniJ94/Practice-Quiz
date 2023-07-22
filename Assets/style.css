@@ -42,7 +42,7 @@ main {
     border: var(--white);
 }
 
-#box {
+#container div {
     background-color: var(--grey);
     color: var(--white);
     width: 300px;
