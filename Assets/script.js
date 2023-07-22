@@ -10,7 +10,8 @@
 // WHEN the game is over
 // THEN I can save my initials and my score
 // --------------------------------------------------------------------------------------------------------
-
+var startButton = document.querySelector(".start-button");
+var timerText = document.querySelector("timer-text");
 
 //So first thing's first. There will be a start button which starts a one minute timer at the top of the page. The Start button will also reveal the first question. 
 
