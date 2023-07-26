@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="second-Assets/second.css">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Highscores</title>
 </head>
+
 <body>
+    <header>
+        <h1>Highscores!</h1>
+    </header>
+
+    <main>
+        <ol id="highScoresList">
+
+        </ol>
+        <script>
+            // Retrieve high scores from local storage and parse them
+            var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
     
+            // Get the <ul> element to display the high scores
+            var highScoresList = document.getElementById("highScoresList");
+    
+            // Loop through the high scores array and create <li> elements to display them
+            for (var i = 0; i < highScores.length; i++) {
+                var highScore = highScores[i];
+                var listItem = document.createElement("li");
+                listItem.textContent = highScore.initials + ": " + highScore.score;
+                highScoresList.appendChild(listItem);
+            }
+        </script>
+    </main>
 </body>
-<script src="script.js"></script>
+<script src="second-Assets/second.js"></script>
+
 </html>

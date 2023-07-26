@@ -38,6 +38,10 @@ List your collaborators, if any, with links to their GitHub profiles.
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
 If you followed tutorials, include links to those here as well.
+https://www.w3schools.com/jsref/event_target.asp
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event
+https://stackoverflow.com/questions/55377064/javascript-localstorage-only-one-value-gets-stored-how-can-i-store-everything
 
 ## License
 

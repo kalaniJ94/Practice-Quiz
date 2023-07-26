@@ -26,8 +26,6 @@ var quest2 = document.getElementById("box2")
 var quest3 = document.getElementById("box3")
 var quest4 = document.getElementById("box4")
 
-
-var query = "";
 var highscore = 0;
 var initials = "";
 var timer;
@@ -77,12 +75,12 @@ function firstQuestion() {
             if (element.textContent === "true") {
                 highscore += 10;
                 wordBlank.innerHTML = "Correct!";
-                thirdQuestion();
+                secondQuestion();
             }
         } else if (element.textContent !== "true"){
             wordBlank.innerHTML = "Wrong!";
             timerCount -= 10;
-            thirdQuestion();
+            secondQuestion();
         }
      });
     }
@@ -345,28 +343,40 @@ function tenthQuestion() {
 //DO NOT WORRY ABOUT QUESTION CONTENT YET! THAT WILL BE EASY TO FIX AT THE END!
 
 // IF timer === 0, end game. OR if all questions are done, the game ends. 
-function endgame(){
-    if (!gameEnded){
-        gameEnded = true;
-    }
-    var initials = window.prompt("Your score is: " + highscore + "! Enter your initials to view your place on the highscore list!");
-        if (initials.length > 2) {
-          window.alert("Please enter first and last initials only!")
-          endgame();  
-          return;
-        }
-        var highscores = JSON.parse(localStorage.getItem("highscores")) || []; 
-        highscores.push({ initials: initials, score: highscore }); // Add current score to the high scores array
-        localStorage.setItem("highscores", JSON.stringify(highscores)); // Save updated high scores to localStorage
+// function endgame(){
+//     if (!gameEnded){
+//         gameEnded = true;
+//     }
+//     var initials = window.prompt("Your score is: " + highscore + "! Enter your initials to view your place on the highscore list!");
+//         if (initials.length > 2) {
+//           window.alert("Please enter first and last initials only!")
+//           endgame();  
+//           return;
+//         }
+//         var highscores = JSON.parse(localStorage.getItem("highscores")) || []; 
+//         highscores.push({ initials: initials, score: highscore }); // Add current score to the high scores array
+//         localStorage.setItem("highscores", JSON.stringify(highscores)); // Save updated high scores to localStorage
     
 
-        var repeat = window.confirm("Play again?")
-            if(repeat){
-                gameEnded = false;
-                startGame();
+        
+        function endgame() {
+            if (!gameEnded){
+                gameEnded = true;
+            }
+                var initials = window.prompt("Your score is: " + highscore + "! Enter your initials to view your place on the high score list!");
+                // Save the high scores and initials in local storage
+                var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+                highScores.push({ initials: initials, score: highscore });
+                localStorage.setItem("highScores", JSON.stringify(highScores));
+                
+                var repeat = window.confirm("Play again?")
+                if(repeat){
+                    gameEnded = false;
+                    startGame();
+                }
             }
         
-    }
+    
     
 
 
