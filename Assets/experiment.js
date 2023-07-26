@@ -3,40 +3,41 @@ var containers = document.querySelector("#container");
 
 var timerEl = document.getElementById("timer-text");
 var startButton = document.getElementById("start-button");
-
 var questionBlank = document.getElementById("question-blank");
+var intro = document.getElementById("intro")
+
 var wordBlank = document.querySelector("#wordblank");
 
 var questBox = document.getElementsByClassName("box")
 
 var questions = [
   {
-    question: "Hello There",
-    choices: ["true", "General Kenobi", "General Kenobi", "General Kenobi"],
-    correctAnswer: "true",
+    question: "How many championships have the Green Bay Packers won in their history?",
+    choices: ["13", "4", "0", "8"],
+    correctAnswer: "13",
   },
   {
-    question: "Hello There",
-    choices: ["true", "General Kenobi", "General Kenobi", "General Kenobi"],
-    correctAnswer: "true",
+    question: "During what year was the United States Constitution ratified?",
+    choices: ["1780", "1776 ", " 1788", "1778"],
+    correctAnswer: "1788",
   }, {
-    question: "Hello There",
-    choices: ["true", "General Kenobi", "General Kenobi", "General Kenobi"],
-    correctAnswer: "true",
+    question: "Potatoes originated from which area?",
+    choices: ["Morocco", "Russia", "Ireland", "Peru"],
+    correctAnswer: "Peru",
   }, {
-    question: "Hello There",
-    choices: ["true", "General Kenobi", "General Kenobi", "General Kenobi"],
+    question: "What year was the Iphone released",
+    choices: ["2007", "2006", "2010", "2009"],
+    correctAnswer: "2007",
+  },
+  {
+    question: "What injury did Lord Nelson receive during the Napoleon Wars ",
+    choices: ["Lost his arm", "Lost his leg", "Became incontinent", "Lost his ear"],
     correctAnswer: "true",
   },
   {
-    question: "Hello There",
-    choices: ["true", "General Kenobi", "General Kenobi", "General Kenobi"],
-    correctAnswer: "true",
-  },
-  {
-    question: "Hello There",
-    choices: ["true", "General Kenobi", "General Kenobi", "General Kenobi"],
-    correctAnswer: "true",
+    question: "What is the name of Louise Belcher's favorite toy?",
+    choices: ["Coochie Kopi", "Coochie Koo", "Coochie Wopi", "Coochie Belcher"],
+    correctAnswer: "Coochie Kopi",
   },
 ];
 
@@ -45,6 +46,7 @@ var highscore = 0;
 var timer;
 
 function startGame() {
+  gameEnded = false;
   timerCount = 60;
   startTimer();
   showQuestion();
@@ -53,24 +55,23 @@ function startGame() {
 function startTimer() {
   // Starts timer
   timer = setInterval(function () {
-      timerCount--;
-      timerEl.textContent = timerCount;
-      if (timerCount > 0) {
-          startButton.disabled = true;
-      }
-      if (timerCount === 0) {
-          endgame();
-          clearInterval(timer);
-      }
+    timerCount--;
+    timerEl.textContent = timerCount;
+    if (timerCount > 0) {
+      startButton.disabled = true;
+    }
+    if (timerCount === 0) {
+      clearInterval(timer);
+      endgame();
+    }
   }
-      , 1000);
+    , 1000);
 }
 
 function showQuestion() {
   if (currentQuestionIndex >= questions.length) {
     clearInterval(timer);
     endgame();
-    return;
   }
 
   var currentQuestion = questions[currentQuestionIndex];
@@ -115,20 +116,28 @@ function endgame() {
     "Your score is: " + highscore + "! Enter your initials to view your place on the high score list!"
   );
   {
-    if(!initials){
+    if (!initials) {
       return;
     }
+  }
+  if (initials.length > 2) {
+    window.alert("Please enter initials only");
+    endgame();
+    return;
   }
   var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
   highScores.push({ initials: initials, score: highscore });
   localStorage.setItem("highScores", JSON.stringify(highScores));
 
-  var repeat = window.confirm("Play again?");
-  if (repeat) {
+  var playAgain = window.confirm("Play again?");
+  if (playAgain) {
     gameEnded = false;
     currentQuestionIndex = 0;
     highscore = 0;
     startGame();
+  }
+  else{
+    window.alert("Thanks for playing!");
   }
 }
 

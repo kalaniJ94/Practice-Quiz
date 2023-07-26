@@ -64,25 +64,25 @@ function firstQuestion() {
     questBox[3].innerHTML = "General Kenobi";
 
     for (var i = 0; i < questBox.length; i++) {
-        questBox[i].addEventListener("click", function (event) { 
-           
-        var element = event.target;
+        questBox[i].addEventListener("click", function (event) {
 
-        if (element.matches(".box")) {
+            var element = event.target;
 
-            if (element.textContent === "true") {
-                highscore += 10;
-                wordBlank.innerHTML = "Correct!";
-                secondQuestion();
+            if (element.matches(".box")) {
+
+                if (element.textContent === "true") {
+                    highscore += 10;
+                    wordBlank.innerHTML = "Correct!";
+                    secondQuestion();
+                }
+            } else {
+                wordBlank.innerHTML = "Wrong!";
+                timerCount -= 10;
+                setTimeout(function () {
+                    secondQuestion();
+                }, 1000);
             }
-        } else {
-            wordBlank.innerHTML = "Wrong!";
-            timerCount -= 10;
-            setTimeout(function () {
-                secondQuestion();
-            }, 1000);
-        }
-     });
+        });
     }
 }
 function secondQuestion() {
@@ -92,23 +92,23 @@ function secondQuestion() {
     questBox[2].innerHTML = "General Kenobi";
     questBox[3].innerHTML = "General Kenobi";
     for (var i = 0; i < questBox.length; i++) {
-        questBox[i].addEventListener("click", function (event) { 
+        questBox[i].addEventListener("click", function (event) {
             event.stopPropagation();
-        var element = event.target;
+            var element = event.target;
 
-        if (element.matches(".box")) {
+            if (element.matches(".box")) {
 
-            if (element.textContent === "true2") {
-                highscore += 10;
-                wordBlank.innerHTML = "Correct!";
+                if (element.textContent === "true2") {
+                    highscore += 10;
+                    wordBlank.innerHTML = "Correct!";
+                    thirdQuestion();
+                }
+            } else if (element.textContent !== "true2") {
+                wordBlank.innerHTML = "Wrong!";
+                timerCount -= 10;
                 thirdQuestion();
             }
-        } else if (element.textContent !== "true2"){
-            wordBlank.innerHTML = "Wrong!";
-            timerCount -= 10;
-            thirdQuestion();
-        }
-     });
+        });
     }
 }
 
@@ -120,23 +120,23 @@ function thirdQuestion() {
     questBox[2].innerHTML = "General Kenobi";
     questBox[3].innerHTML = "General Kenobi";
     for (var i = 0; i < questBox.length; i++) {
-        questBox[i].addEventListener("click", function (event) { 
+        questBox[i].addEventListener("click", function (event) {
             event.stopPropagation();
-        var element = event.target;
+            var element = event.target;
 
-        if (element.matches(".box")) {
+            if (element.matches(".box")) {
 
-            if (element.textContent === "true3") {
-                highscore += 10;
-                wordBlank.innerHTML = "Correct!";
+                if (element.textContent === "true3") {
+                    highscore += 10;
+                    wordBlank.innerHTML = "Correct!";
+                    fourthQuestion();
+                }
+            } else if (element.textContent !== "true3") {
+                wordBlank.innerHTML = "Wrong!";
+                timerCount -= 10;
                 fourthQuestion();
             }
-        } else if (element.textContent !== "true3"){
-            wordBlank.innerHTML = "Wrong!";
-            timerCount -= 10;
-            fourthQuestion();
-        }
-     });
+        });
     }
 }
 
@@ -148,23 +148,23 @@ function fourthQuestion() {
     questBox[2].innerHTML = "General Kenobi";
     questBox[3].innerHTML = "General Kenobi";
     for (var i = 0; i < questBox.length; i++) {
-        questBox[i].addEventListener("click", function (event) { 
+        questBox[i].addEventListener("click", function (event) {
             event.stopPropagation();
-        var element = event.target;
+            var element = event.target;
 
-        if (element.matches(".box")) {
+            if (element.matches(".box")) {
 
-            if (element.textContent === "true4") {
-                highscore += 10;
-                wordBlank.innerHTML = "Correct!";
+                if (element.textContent === "true4") {
+                    highscore += 10;
+                    wordBlank.innerHTML = "Correct!";
+                    fifthQuestion();
+                }
+            } else if (element.textContent !== "true4") {
+                wordBlank.innerHTML = "Wrong!";
+                timerCount -= 10;
                 fifthQuestion();
             }
-        } else if (element.textContent !== "true4"){
-            wordBlank.innerHTML = "Wrong!";
-            timerCount -= 10;
-            fifthQuestion();
-        }
-     });
+        });
     }
 
 
@@ -176,23 +176,23 @@ function fifthQuestion() {
     questBox[2].innerHTML = "General Kenobi";
     questBox[3].innerHTML = "General Kenobi";
     for (var i = 0; i < questBox.length; i++) {
-        questBox[i].addEventListener("click", function (event) { 
+        questBox[i].addEventListener("click", function (event) {
             event.stopPropagation();
-        var element = event.target;
+            var element = event.target;
 
-        if (element.matches(".box")) {
+            if (element.matches(".box")) {
 
-            if (element.textContent === "true5") {
-                highscore += 10;
-                wordBlank.innerHTML = "Correct!";
+                if (element.textContent === "true5") {
+                    highscore += 10;
+                    wordBlank.innerHTML = "Correct!";
+                    sixthQuestion();
+                }
+            } else if (element.textContent !== "true5") {
+                wordBlank.innerHTML = "Wrong!";
+                timerCount -= 10;
                 sixthQuestion();
             }
-        } else if (element.textContent !== "true5"){
-            wordBlank.innerHTML = "Wrong!";
-            timerCount -= 10;
-            sixthQuestion();
-        }
-     });
+        });
     }
 }
 
@@ -204,23 +204,23 @@ function sixthQuestion() {
     questBox[2].innerHTML = "General Kenobi";
     questBox[3].innerHTML = "General Kenobi";
     for (var i = 0; i < questBox.length; i++) {
-        questBox[i].addEventListener("click", function (event) { 
+        questBox[i].addEventListener("click", function (event) {
             event.stopPropagation();
-        var element = event.target;
+            var element = event.target;
 
-        if (element.matches(".box")) {
+            if (element.matches(".box")) {
 
-            if (element.textContent === "true6") {
-                highscore += 10;
-                wordBlank.innerHTML = "Correct!";
+                if (element.textContent === "true6") {
+                    highscore += 10;
+                    wordBlank.innerHTML = "Correct!";
+                    seventhQuestion();
+                }
+            } else if (element.textContent !== "true6") {
+                wordBlank.innerHTML = "Wrong!";
+                timerCount -= 10;
                 seventhQuestion();
             }
-        } else if (element.textContent !== "true6"){
-            wordBlank.innerHTML = "Wrong!";
-            timerCount -= 10;
-            seventhQuestion();
-        }
-     });
+        });
     }
 
 
@@ -232,23 +232,23 @@ function seventhQuestion() {
     questBox[2].innerHTML = "General Kenobi";
     questBox[3].innerHTML = "General Kenobi";
     for (var i = 0; i < questBox.length; i++) {
-        questBox[i].addEventListener("click", function (event) { 
+        questBox[i].addEventListener("click", function (event) {
             event.stopPropagation();
-        var element = event.target;
+            var element = event.target;
 
-        if (element.matches(".box")) {
+            if (element.matches(".box")) {
 
-            if (element.textContent === "true7") {
-                highscore += 10;
-                wordBlank.innerHTML = "Correct!";
+                if (element.textContent === "true7") {
+                    highscore += 10;
+                    wordBlank.innerHTML = "Correct!";
+                    eighthQuestion();
+                }
+            } else if (element.textContent !== "true7") {
+                wordBlank.innerHTML = "Wrong!";
+                timerCount -= 10;
                 eighthQuestion();
             }
-        } else if (element.textContent !== "true7"){
-            wordBlank.innerHTML = "Wrong!";
-            timerCount -= 10;
-            eighthQuestion();
-        }
-     });
+        });
     }
 
 
@@ -260,23 +260,23 @@ function eighthQuestion() {
     questBox[2].innerHTML = "General Kenobi";
     questBox[3].innerHTML = "General Kenobi";
     for (var i = 0; i < questBox.length; i++) {
-        questBox[i].addEventListener("click", function (event) { 
+        questBox[i].addEventListener("click", function (event) {
             event.stopPropagation();
-        var element = event.target;
+            var element = event.target;
 
-        if (element.matches(".box")) {
+            if (element.matches(".box")) {
 
-            if (element.textContent === "true8") {
-                highscore += 10;
-                wordBlank.innerHTML = "Correct!";
+                if (element.textContent === "true8") {
+                    highscore += 10;
+                    wordBlank.innerHTML = "Correct!";
+                    ninthQuestion();
+                }
+            } else if (element.textContent !== "true8") {
+                wordBlank.innerHTML = "Wrong!";
+                timerCount -= 10;
                 ninthQuestion();
             }
-        } else if (element.textContent !== "true8"){
-            wordBlank.innerHTML = "Wrong!";
-            timerCount -= 10;
-            ninthQuestion();
-        }
-     });
+        });
     }
 }
 
@@ -287,23 +287,23 @@ function ninthQuestion() {
     questBox[2].innerHTML = "General Kenobi";
     questBox[3].innerHTML = "General Kenobi";
     for (var i = 0; i < questBox.length; i++) {
-        questBox[i].addEventListener("click", function (event) { 
+        questBox[i].addEventListener("click", function (event) {
             event.stopPropagation();
-        var element = event.target;
+            var element = event.target;
 
-        if (element.matches(".box")) {
+            if (element.matches(".box")) {
 
-            if (element.textContent === "true9") {
-                highscore += 10;
-                wordBlank.innerHTML = "Correct!";
+                if (element.textContent === "true9") {
+                    highscore += 10;
+                    wordBlank.innerHTML = "Correct!";
+                    tenthQuestion();
+                }
+            } else if (element.textContent !== "true9") {
+                wordBlank.innerHTML = "Wrong!";
+                timerCount -= 10;
                 tenthQuestion();
             }
-        } else if (element.textContent !== "true9"){
-            wordBlank.innerHTML = "Wrong!";
-            timerCount -= 10;
-            tenthQuestion();
-        }
-     });
+        });
     }
 
 }
@@ -314,26 +314,26 @@ function tenthQuestion() {
     questBox[2].innerHTML = "General Kenobi";
     questBox[3].innerHTML = "General Kenobi";
     for (var i = 0; i < questBox.length; i++) {
-        questBox[i].addEventListener("click", function (event) { 
+        questBox[i].addEventListener("click", function (event) {
             event.stopPropagation();
-        var element = event.target;
+            var element = event.target;
 
-        if (element.matches(".box")) {
+            if (element.matches(".box")) {
 
-            if (element.textContent === "true0") {
-                highscore += 10;
-                wordBlank.innerHTML = "Correct!";
+                if (element.textContent === "true0") {
+                    highscore += 10;
+                    wordBlank.innerHTML = "Correct!";
+                    clearInterval(timer);
+                    endgame();
+
+                }
+            } else if (element.textContent !== "true0") {
+                wordBlank.innerHTML = "Wrong!";
+                timerCount -= 10;
                 clearInterval(timer);
                 endgame();
-                
             }
-        } else if (element.textContent !== "true0"){
-            wordBlank.innerHTML = "Wrong!";
-            timerCount -= 10;
-            clearInterval(timer);
-            endgame();
-        }
-     });
+        });
     }
 }
 
@@ -343,28 +343,40 @@ function tenthQuestion() {
 //DO NOT WORRY ABOUT QUESTION CONTENT YET! THAT WILL BE EASY TO FIX AT THE END!
 
 // IF timer === 0, end game. OR if all questions are done, the game ends. 
-     
-        function endgame() {
-            if (!gameEnded){
-                gameEnded = true;
-            }
-                var initials = window.prompt("Your score is: " + highscore + "! Enter your initials to view your place on the high score list!");
-                // Save the high scores and initials in local storage
-                var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-                highScores.push({ initials: initials, score: highscore });
-                localStorage.setItem("highScores", JSON.stringify(highScores));
-                
-                var repeat = window.confirm("Play again?")
-                if(repeat){
-                    gameEnded = false;
-                    highscore = 0;
-                    timerCount = 60;
-                    startGame();
-                }
-            }
-        
-    
-    
+
+function endgame() {
+    if (!gameEnded) {
+        gameEnded = true;
+    }
+   
+    var initials = window.prompt("Your score is: " + highscore + "! Enter your initials to view your place on the high score list!")
+        if(initials.length > 2){
+            window.alert("Please enter initials only");
+            endgame();
+            return;
+    }
+    {
+        if (!initials){
+          repeat;
+        }
+      }
+};
+// Save the high scores and initials in local storage
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+highScores.push({ initials: initials, score: highscore });
+localStorage.setItem("highScores", JSON.stringify(highScores));
+
+var repeat = window.confirm("Play again?")
+if (repeat) {
+    gameEnded = false;
+    highscore = 0;
+    timerCount = 60;
+    startGame();
+}
+            
+
+
+
 
 
 //When the game is over, shows highscore and prompts Initials. Initials will be saved onto a highscores list, which will be on a separate page. The Highscore page will have two buttons, one to return to game and one to clear high score list. 
