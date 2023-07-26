@@ -30,12 +30,10 @@ var highscore = 0;
 var initials = "";
 var timer;
 
-
-
-
 //So first thing's first. There will be a start button which starts a one minute timer at the top of the page. The Start button will also reveal the first question. 
 
 function startGame() {
+    gameEnded = false;
     timerCount = 60;
     startTimer();
     firstQuestion();
@@ -67,7 +65,7 @@ function firstQuestion() {
 
     for (var i = 0; i < questBox.length; i++) {
         questBox[i].addEventListener("click", function (event) { 
-            event.stopPropagation();
+           
         var element = event.target;
 
         if (element.matches(".box")) {
@@ -77,10 +75,12 @@ function firstQuestion() {
                 wordBlank.innerHTML = "Correct!";
                 secondQuestion();
             }
-        } else if (element.textContent !== "true"){
+        } else {
             wordBlank.innerHTML = "Wrong!";
             timerCount -= 10;
-            secondQuestion();
+            setTimeout(function () {
+                secondQuestion();
+            }, 1000);
         }
      });
     }
@@ -327,7 +327,7 @@ function tenthQuestion() {
                 endgame();
                 
             }
-        } else if (element.textContent !== "true0"){ou
+        } else if (element.textContent !== "true0"){
             wordBlank.innerHTML = "Wrong!";
             timerCount -= 10;
             clearInterval(timer);
@@ -343,22 +343,7 @@ function tenthQuestion() {
 //DO NOT WORRY ABOUT QUESTION CONTENT YET! THAT WILL BE EASY TO FIX AT THE END!
 
 // IF timer === 0, end game. OR if all questions are done, the game ends. 
-// function endgame(){
-//     if (!gameEnded){
-//         gameEnded = true;
-//     }
-//     var initials = window.prompt("Your score is: " + highscore + "! Enter your initials to view your place on the highscore list!");
-//         if (initials.length > 2) {
-//           window.alert("Please enter first and last initials only!")
-//           endgame();  
-//           return;
-//         }
-//         var highscores = JSON.parse(localStorage.getItem("highscores")) || []; 
-//         highscores.push({ initials: initials, score: highscore }); // Add current score to the high scores array
-//         localStorage.setItem("highscores", JSON.stringify(highscores)); // Save updated high scores to localStorage
-    
-
-        
+     
         function endgame() {
             if (!gameEnded){
                 gameEnded = true;
@@ -372,6 +357,8 @@ function tenthQuestion() {
                 var repeat = window.confirm("Play again?")
                 if(repeat){
                     gameEnded = false;
+                    highscore = 0;
+                    timerCount = 60;
                     startGame();
                 }
             }
