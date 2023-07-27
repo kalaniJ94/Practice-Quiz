@@ -31,15 +31,20 @@ main {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    flex-direction: row;
     justify-content: center;
 }
-
+section{
+    display: flex;
+}
+#starter{
+    width: 100%;
+}
 #start-button {
     height: 60px;
     background-image: linear-gradient(var(--white) 0%,
             var(--gold) 100%);
     border: var(--white);
+    
 }
 
 #container div {
@@ -53,9 +58,17 @@ main {
     justify-content: center;
     border-radius: 8px;
     transition: all 0.5s ease-in-out;
+    flex-direction: column;
+}
+#container p{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .box:hover {
     box-shadow: inset 0px 0px 8px var(--gold), 0 0 15px var(--gold);
     cursor: pointer;
 }
+

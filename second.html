@@ -20,6 +20,9 @@
         <script>
             // Retrieve high scores from local storage and parse them
             var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+            // Sort the high scores array in descending order based on scores
+        highScores.sort((a, b) => b.score - a.score);
     
             // Get the <ul> element to display the high scores
             var highScoresList = document.getElementById("highScoresList");
@@ -34,6 +37,5 @@
         </script>
     </main>
 </body>
-<script src="second-Assets/second.js"></script>
 
 </html>
